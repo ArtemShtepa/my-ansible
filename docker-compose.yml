@@ -1,0 +1,12 @@
+---
+version: "2.4"
+
+services:
+  centos:
+    image: centos:7
+    container_name: centos7
+    tty: true
+  ubuntu:
+    image: ubuntu:22.04
+    container_name: ubuntu
+    tty: true
