@@ -2,11 +2,15 @@
 version: "2.4"
 
 services:
-  centos:
+  centos_vm:
     image: centos:7
     container_name: centos7
     tty: true
-  ubuntu:
+  ubuntu_vm:
     image: ubuntu:22.04
     container_name: ubuntu
+    tty: true
+  fedora_vm:
+    image: pycontribs/fedora:latest
+    container_name: pycontribs-fedora
     tty: true
