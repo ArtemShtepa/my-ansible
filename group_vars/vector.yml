@@ -1,6 +1,6 @@
 ---
-vector_version: "0.23.0"
-vector_datadir: "/var/lib/vector"
-vector_config: "/etc/vector/vector.toml"
 vector_test_dir: "/home/centos/test"
+clickhouse_host: "{{ groups['clickhouse'][0] }}"
+clickhouse_user: "logger"
+clickhouse_password: "logger"
 ...

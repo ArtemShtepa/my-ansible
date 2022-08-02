@@ -21,12 +21,20 @@ clear() {
     rm terraform.tfstate*
 }
 
+req() {
+    ansible-galaxy install -r requirements.yml --force
+}
+
 run() {
     ansible-playbook -i inventory/prod.yml site.yml
 }
 
+rund() {
+    ansible-playbook -i inventory/prod.yml --diff site.yml
+}
+
 lint() {
-    ansible-lint site.yml
+    ansible-lint
 }
 
 if [ $1 ]; then
@@ -37,6 +45,8 @@ else
     echo "  apply - Terraform apply"
     echo "  destroy - Terraform destroy"
     echo "  clear - Clear files from Terraform"
-    echo "  run - Run Absible playbook"
+    echo "  req - Install requirements for Ansible"
+    echo "  run - Run Ansible playbook"
+    echo "  rund - Run Ansible playbook with diff"
     echo "  lint - Run Ansible-Lint"
 fi
